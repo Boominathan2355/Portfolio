@@ -6,7 +6,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ## 📌 Live Demo
 
-👉 [View Portfolio](https://boominathan2355.github.io/Portfolio/) *(Update with your actual URL if hosted)*
+👉 [View Portfolio](https://boominathan2355.github.io/Portfolio/) *(Update with your actual URL)*
 
 ---
 
