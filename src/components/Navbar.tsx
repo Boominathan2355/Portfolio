@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
               className="flex items-center cursor-pointer"
             >
               <div className="flex items-center justify-center w-10 h-10">
-                <img src="/logo.svg" alt="Logo" className="w-6 h-6" />
+                <img src="./public/logo.svg" alt="Logo" className="w-6 h-6" />
               </div>
               <span className="ml-2 text-lg font-bold">Boominathan</span>
             </ScrollLink>
