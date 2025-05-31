@@ -1,0 +1,17 @@
+{
+  "name": "Boominathan Alagirisamy Portfolio",
+  "short_name": "Boominathan",
+  "description": "AI & Data Science Student Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
