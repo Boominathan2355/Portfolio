@@ -53,7 +53,7 @@ const About: FC<AboutProps> = ({ data }) => {
           >
             <div className="relative h-96 rounded-xl overflow-hidden shadow-xl bg-gray-100">
               <ImageWithFallback 
-                src="./public/working.jpg"
+                src="/working.jpg"
                 alt="Working on computer"
                 className="w-full h-full object-cover"
               />
