@@ -19,7 +19,7 @@ lib-cov/
 # Production Builds
 # =============================
 build/
-dist/
+# dist/ (commented to allow GitHub Pages deployment)
 dist-ssr/
 *.local
 .cache/
@@ -173,3 +173,4 @@ out/
 
 # (No ignore rule for /public/ so these files will be tracked)
 
+node_modules

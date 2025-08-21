@@ -1,0 +1,32 @@
+# Portfolio Website Robots.txt
+# Author: Boominathan Alagirisamy
+# Last Updated: 2025-08-21
+
+# Allow all robots full access
+User-agent: *
+Allow: /
+
+# Allow specific directories explicitly
+Allow: /projects/
+Allow: /public/
+Allow: /assets/
+Allow: /images/
+
+# Prevent caching of asset files
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.pdf$
+
+# Set crawl delay to prevent server overload
+Crawl-delay: 10
+
+# Link to XML sitemap
+Sitemap: https://boominathan2355.github.io/Portfolio/sitemap.xml
+
+# Host directive to specify preferred domain
+Host: https://boominathan2355.github.io/Portfolio/
