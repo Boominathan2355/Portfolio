@@ -1,0 +1,6 @@
+import{c as t,j as e,m as r}from"./index-DDQq1ZQP.js";import{S as a}from"./SocialIcons-tLpuZp62.js";import"./github-Bgi1L_1S.js";/**
+ * @license lucide-react v0.344.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const o=t("ArrowUp",[["path",{d:"m5 12 7-7 7 7",key:"hav0vg"}],["path",{d:"M12 19V5",key:"x0mq9r"}]]),m=({data:s})=>e.jsx("footer",{className:"bg-gray-900 text-gray-200 py-10",children:e.jsx("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:e.jsxs("div",{className:"flex flex-col items-center",children:[e.jsx(r.Link,{to:"home",smooth:!0,duration:800,className:"p-3 bg-primary-500 hover:bg-primary-600 rounded-full mb-6 cursor-pointer transition-colors duration-300",children:e.jsx(o,{className:"w-6 h-6 text-white"})}),e.jsx("h2",{className:"text-2xl font-bold mb-4",children:s.name}),e.jsx("p",{className:"text-gray-400 mb-6 text-center max-w-lg",children:"A passionate AI & Data Science student focused on creating innovative technological solutions."}),e.jsx(a,{social:s.social}),e.jsx("div",{className:"w-full max-w-xl border-t border-gray-700 my-8"}),e.jsxs("p",{className:"text-gray-400 text-center text-sm",children:["© ",new Date().getFullYear()," ",s.name,". All rights reserved."]})]})})});export{m as default};

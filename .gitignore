@@ -1,0 +1,176 @@
+# =============================
+# Dependencies
+# =============================
+node_modules/
+.pnp/
+.pnp.js
+.yarn/
+.npm/
+
+# =============================
+# Testing
+# =============================
+coverage/
+.nyc_output/
+*.lcov
+lib-cov/
+
+# =============================
+# Production Builds
+# =============================
+build/
+# dist/ (commented to allow GitHub Pages deployment)
+dist-ssr/
+*.local
+.cache/
+.temp/
+.output/
+
+# =============================
+# Logs and Debugging
+# =============================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+.eslintcache
+.stylelintcache
+
+# =============================
+# Environment Variables
+# =============================
+.env
+.env.*
+!.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =============================
+# Editor and IDE Files
+# =============================
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# =============================
+# Operating System Files
+# =============================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.lnk
+[Dd]esktop.ini
+
+# Linux
+*~
+.directory
+.fuse_hidden*
+.Trash-*
+.nfs*
+
+# =============================
+# TypeScript
+# =============================
+*.tsbuildinfo
+.tsc/
+.tsconfig.*.json
+
+# =============================
+# React & Vite
+# =============================
+*.local
+.vite/
+stats.html
+.rollup.cache/
+
+# =============================
+# Package Managers
+# =============================
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+.pnpm-store/
+
+# Keep these files (need ! to override previous patterns)
+!.gitkeep
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# =============================
+# TypeScript Build Info
+# =============================
+*.tsbuildinfo
+
+# =============================
+# Optional npm/yarn Cache
+# =============================
+.npm/
+.yarn-integrity
+
+# =============================
+# ESLint Cache
+# =============================
+.eslintcache
+
+# =============================
+# REPL History
+# =============================
+.node_repl_history
+
+# =============================
+# npm Pack Output
+# =============================
+*.tgz
+
+# =============================
+# Next.js Output
+# =============================
+.next/
+out/
+
+# =============================
+# Public Assets (Tracked)
+# =============================
+# Do NOT ignore public assets needed for deployment or UI.
+# The following image files are required and must be tracked:
+# public/logo.svg
+# public/profile.jpg
+# public/working.jpg
+
+# (No ignore rule for /public/ so these files will be tracked)
+
+node_modules
