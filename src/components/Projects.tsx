@@ -5,6 +5,8 @@ import { Project } from '../data/personalData';
 import ImageWithFallback from './ImageWithFallback';
 import ErrorBoundary from './ErrorBoundary';
 
+
+
 interface ProjectsProps {
   data: Project[];
 }

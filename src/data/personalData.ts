@@ -135,42 +135,42 @@ export const personalData: PersonalData = {
       date: "2022–2023",
       description: "Engineered a portable CNC laser engraver incorporating a pantograph mechanism. Programmed Arduino-based GRBL firmware for precise motion control. Executed high-precision wood engraving projects.",
       technologies: ["Arduino", "GRBL Firmware", "Mechanical Design", "CAD"],
-      image: "image"
+      image: "/project-1.jpg"
     },
     {
       title: "Fire & Smoke Detection Using Convolutional Neural Networks",
       date: "2024",
       description: "Designed a deep learning-based system to detect fire and smoke for enhanced safety monitoring.",
       technologies: ["Python", "CNN", "OpenCV", "TensorFlow"],
-      image: "image"
+      image: "/project-2.jpg"
     },
     {
       title: "Transformation: 2D into 3D Home Design",
       date: "2024",
       description: "Created a CNN-based model to convert 2D floor plans into realistic 3D home designs using Open3D and Blender.",
       technologies: ["Python", "CNN", "Open3D", "Blender"],
-      image: "image"
+      image: "/project-3.jpg"
     },
     {
       title: "Offline Chatbot Using Ollama and NLTK",
       date: "2025",
       description: "Developed a privacy-focused offline chatbot integrating the Ollama framework with NLTK for natural language understanding and processing.",
       technologies: ["Python", "NLTK", "Ollama", "NLP","GitHub"],
-      image: "image"
+      image: "/project-4.jpg"
     },
     {
       title: "IoT-Based Agricultural Monitoring System",
       date: "2025",
       description: "Developed a real-time monitoring web application using React and JavaScript. Integrated multiple sensors for accurate agricultural data collection. Managed data storage using AWS Cloud Storage and MongoDB. Planned future implementation of machine learning models for crop health prediction.",
       technologies: ["React", "JavaScript", "AWS", "MongoDB", "IoT Sensors","GitHub"],
-      image: "image"
+      image: "/project-5.jpg"
     },
     {
       title: "Transformers Model",
       date: "2025",
       description: "Implemented a Transformer-based seq2seq model from scratch using PyTorch, featuring Multi-Head Attention, Positional Encoding, Encoder-Decoder architecture, and Masked Attention. Trained with Cross-Entropy Loss and Adam optimizer, demonstrating strong grasp of core Transformer mechanisms without relying on pre-built libraries.",
       technologies: ["Transformers", "Python", "PyTorch", "Google Colab","NumPy & Math", "GitHub"],
-      image: "image"
+      image: "/project-6.jpg"
     }
   ],
   education: [
@@ -178,7 +178,7 @@ export const personalData: PersonalData = {
       degree: "Bachelor of Technology (B.Tech) in AI & Data Science",
       institution: "Dr. Mahalingam College of Engineering and Technology",
       duration: "Expected Graduation: June 2026",
-      score: "Current CGPA: 7.3 (till Semester V)"
+      score: "Current CGPA: 7.3 (still Semester VI)"
     },
     {
       degree: "Diploma in Mechanical Engineering",

@@ -8,6 +8,9 @@ Allow: /
 
 # Allow specific directories explicitly
 Allow: /projects/
+
+# Sitemap location
+Sitemap: https://boominathan2355.github.io/Portfolio/sitemap.xml
 Allow: /public/
 Allow: /assets/
 Allow: /images/
