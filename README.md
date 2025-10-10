@@ -1,5 +1,3 @@
-# Boominathan Alagirisamy's Portfolio
-
 <div align="center">
   <h1>✨ Boominathan Alagirisamy's Portfolio</h1>
   <p>AI & Data Science Student | Full Stack Developer | Tech Enthusiast</p>
