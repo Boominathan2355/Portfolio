@@ -1,109 +1,123 @@
-# 💼 Boominathan Alagirisamy's Portfolio
+# Boominathan Alagirisamy's Portfolio
 
-[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fboominathan2355.github.io%2FPortfolio%2F)](https://boominathan2355.github.io/Portfolio/)
-[![GitHub last commit](https://img.shields.io/github/last-commit/Boominathan2355/Portfolio)](https://github.com/Boominathan2355/Portfolio/commits/main)
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<div align="center">
+  <h1>✨ Boominathan Alagirisamy's Portfolio</h1>
+  <p>AI & Data Science Student | Full Stack Developer | Tech Enthusiast</p>
+  
+  [![Website](https://img.shields.io/website?url=https%3A%2F%2Fboominathan2355.github.io%2FPortfolio%2F&style=for-the-badge)](https://boominathan2355.github.io/Portfolio/)
+  [![GitHub stars](https://img.shields.io/github/stars/Boominathan2355/Portfolio?style=for-the-badge)](https://github.com/Boominathan2355/Portfolio/stargazers)
+  [![GitHub last commit](https://img.shields.io/github/last-commit/Boominathan2355/Portfolio?style=for-the-badge)](https://github.com/Boominathan2355/Portfolio/commits/main)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+  
+  [![Open in Visual Studio Code](https://img.shields.io/badge/-Open%20in%20VSCode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://open.vscode.dev/Boominathan2355/Portfolio)
+  [![GitHub issues](https://img.shields.io/github/issues/Boominathan2355/Portfolio?style=for-the-badge)](https://github.com/Boominathan2355/Portfolio/issues)
+  [![GitHub pull requests](https://img.shields.io/github/issues-pr/Boominathan2355/Portfolio?style=for-the-badge)](https://github.com/Boominathan2355/Portfolio/pulls)
+</div>
 
-Welcome to my personal portfolio website! This project showcases my journey as an AI & Data Science student, highlighting my projects, skills, and professional experience. Built with modern web technologies, this portfolio demonstrates my expertise in both AI/ML and full-stack development.
+## Features
 
----
+<div align="center">
+  <table>
+    <tr>
+      <td>📱 Responsive Design</td>
+      <td>⚡ Performance Optimized</td>
+      <td>🔍 SEO Ready</td>
+    </tr>
+    <tr>
+      <td>🎨 Modern UI/UX</td>
+      <td>📱 PWA Support</td>
+      <td>♿ Accessibility First</td>
+    </tr>
+  </table>
+</div>
 
-## 📌 Live Demo
-
-👉 [View Portfolio](https://boominathan2355.github.io/Portfolio/) *(Update with your actual URL)*
-
-## 🌟 Features
-
-- **Responsive Design**: Seamless experience across all devices
-- **Modern UI/UX**: Built with React and Tailwind CSS
-- **Performance Optimized**: Fast loading and smooth animations
-- **SEO Ready**: Implemented Schema.org and Meta tags
-- **PWA Support**: Installable as a Progressive Web App
-- **Accessibility**: WCAG compliant with ARIA support
-
-## 👨‍💻 About Me
-
-I'm an AI & Data Science student passionate about:
-- 🤖 Artificial Intelligence & Machine Learning
-- 💻 Full Stack Development
-- 🌐 IoT and Connected Systems
-- 📊 Data Analysis and Visualization
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
-- **Framework**: React with TypeScript
-- **Styling**: Tailwind CSS
-- **Build Tool**: Vite
-- **State Management**: React Hooks
-- **Icons**: React Icons
-- **Animations**: Framer Motion
+<div align="left">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" />
+  <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" />
+</div>
 
 ### Development Tools
-- **Version Control**: Git
-- **Package Manager**: npm
-- **Code Quality**: ESLint, Prettier
-- **Deployment**: GitHub Pages
+<div align="left">
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" />
+  <img src="https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white" />
+  <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black" />
+</div>
 
----
-
-## 📁 Project Structure
-
-```
-
-portfolio/
-├── public/               # Static assets (images, icons)
-├── src/
-│   ├── components/       # All reusable React components
-│   ├── data/             # Personal and portfolio data
-│   ├── App.tsx           # Main App component
-│   └── main.tsx          # Entry point
-├── index.html            # Root HTML
-├── package.json          # Project metadata and dependencies
-├── tailwind.config.js    # Tailwind CSS configuration
-├── vite.config.ts        # Vite configuration
-└── tsconfig.json         # TypeScript configuration
-
-````
-
----
-
-## 🚀 How to Run Locally
+## Project Structure
 
 ```bash
-# Clone the repository
-git clone https://github.com/Boominathan2355/Portfolio.git
-cd Portfolio
+portfolio/
+├── public/               # Static assets (images, icons, manifests)
+├── src/
+│   ├── components/       # Reusable React components
+│   │   ├── About.tsx     # About section
+│   │   ├── Projects.tsx  # Projects showcase
+│   │   └── Contact.tsx   # Contact form
+│   ├── data/             # Portfolio data
+│   ├── App.tsx           # Main App component
+│   └── main.tsx          # Application entry point
+├── .github/              # GitHub workflows
+├── .eslintrc.js          # ESLint config
+├── .gitignore            # Git ignore file
+├── package.json          # Project metadata and dependencies
+├── tailwind.config.js    # Tailwind CSS config
+├── tsconfig.json         # TypeScript config
+└── vite.config.ts        # Vite configuration
+```
 
-# Install dependencies
-npm install
+## Getting Started
 
-# Start development server
-npm run dev
-````
+### Prerequisites
+- Node.js (v16+)
+- npm (v8+)
 
----
+### Installation
 
-## 📷 Preview
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Boominathan2355/Portfolio.git
+   cd Portfolio
+   ```
 
-![Portfolio Screenshot](./public/profile.jpg)
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
----
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-## � Connect With Me
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-- 📧 Email: [boominathanalagirisamy@gmail.com](mailto:boominathanalagirisamy@gmail.com)
-- � LinkedIn: [Boominathan Alagirisamy](https://linkedin.com/in/boominathan-alagirisamy)
-- 🐦 Twitter: [@Boominathan2355](https://twitter.com/Boominathan2355)
-- 💻 GitHub: [Boominathan2355](https://github.com/Boominathan2355)
+## Screenshots
 
-## 📈 Future Enhancements
+<div align="center">
+  <img src="./public/profile.jpg" alt="Portfolio Screenshot" width="80%">
+</div>
 
-- [ ] Add dark mode support
-- [ ] Implement blog section
-- [ ] Add project filtering
-- [ ] Integrate contact form
-- [ ] Add more interactive elements
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
 
 ## 🤝 Contributing
 
