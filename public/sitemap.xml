@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Main Portfolio Page -->
   <url>
     <loc>https://boominathan2355.github.io/Portfolio/</loc>
-    <lastmod>2025-08-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://boominathan2355.github.io/Portfolio/profile.jpg</image:loc>
+      <image:title>Boominathan Alagirisamy Profile</image:title>
+    </image:image>
+  </url>
+  
+  <!-- About Section -->
+  <url>
+    <loc>https://boominathan2355.github.io/Portfolio/#about</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Skills Section -->
+  <url>
+    <loc>https://boominathan2355.github.io/Portfolio/#skills</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Projects Section -->
+  <url>
+    <loc>https://boominathan2355.github.io/Portfolio/#projects</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://boominathan2355.github.io/Portfolio/projects/project-1.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://boominathan2355.github.io/Portfolio/projects/project-2.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://boominathan2355.github.io/Portfolio/projects/project-3.jpg</image:loc>
+    </image:image>
+  </url>
+  
+  <!-- Education Section -->
+  <url>
+    <loc>https://boominathan2355.github.io/Portfolio/#education</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Experience Section -->
+  <url>
+    <loc>https://boominathan2355.github.io/Portfolio/#experience</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Certifications Section -->
+  <url>
+    <loc>https://boominathan2355.github.io/Portfolio/#certifications</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Contact Section -->
+  <url>
+    <loc>https://boominathan2355.github.io/Portfolio/#contact</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

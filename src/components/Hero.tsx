@@ -6,7 +6,6 @@ import { PersonalData } from "../data/personalData";
 import toast from "react-hot-toast";
 import SocialIcons from "./SocialIcons";
 import ImageWithFallback from "./ImageWithFallback";
-import img1 from "../../public/profile.jpg"; // Adjust if needed
 
 interface HeroProps {
   data: PersonalData;
@@ -111,7 +110,7 @@ const Hero: FC<HeroProps> = ({ data }) => {
           >
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl bg-gray-100">
               <ImageWithFallback
-                src={img1}
+                src="/profile.jpg"
                 alt={data.name}
                 className="w-full h-full object-cover"
               />

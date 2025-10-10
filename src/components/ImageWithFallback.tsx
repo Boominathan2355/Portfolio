@@ -15,6 +15,12 @@ const ImageWithFallback: FC<ImageWithFallbackProps> = ({
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  // Get the base URL from Vite's environment
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  
+  // Only prepend base URL if src starts with '/' (absolute path)
+  const imageSrc = src.startsWith('/') ? `${baseUrl}${src.substring(1)}` : src;
+
   if (error) {
     return (
       <div 
@@ -35,11 +41,11 @@ const ImageWithFallback: FC<ImageWithFallbackProps> = ({
         </div>
       )}
       <img
-        src={src}
+        src={imageSrc}
         alt={alt}
         className={`${className} ${loading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
         onError={() => {
-          console.error(`Failed to load image: ${src}`);
+          console.error(`Failed to load image: ${imageSrc}`);
           setError(true);
           setLoading(false);
         }}

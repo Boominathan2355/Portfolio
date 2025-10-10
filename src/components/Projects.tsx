@@ -22,7 +22,7 @@ const ProjectCard: FC<{ project: Project; index: number }> = ({ project, index }
     >
       <div className="h-48 relative overflow-hidden">
         <ImageWithFallback 
-          src={`./public/projects/project-${index + 1}.jpg`}
+          src={`/projects/project-${index + 1}.jpg`}
           alt={`${project.title} project screenshot`}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
         />

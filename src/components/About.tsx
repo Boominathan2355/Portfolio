@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { BookOpen, Cpu, Lightbulb } from 'lucide-react';
 import { PersonalData } from '../data/personalData';
 import ImageWithFallback from './ImageWithFallback';
-import image from '../../public/working.jpg'; // Adjust the path as necessary
 
 interface AboutProps {
   data: PersonalData;
@@ -54,7 +53,7 @@ const About: FC<AboutProps> = ({ data }) => {
           >
             <div className="relative h-96 rounded-xl overflow-hidden shadow-xl bg-gray-100">
               <ImageWithFallback 
-                src={`${image}`}
+                src="/working.jpg"
                 alt="Working on computer"
                 className="w-full h-full object-cover"
               />
