@@ -2,12 +2,16 @@
 # Author: Boominathan Alagirisamy
 # Last Updated: 2025-10-10
 
-# Allow all robots full access
+# Sitemap location
+Sitemap: https://boominathan2355.github.io/Portfolio/sitemap.xml
+
+# Allow all web crawlers to access all parts of the site
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /temp/
 
-# Allow specific directories explicitly
-Allow: /projects/
+# Crawl-delay: 10  # Uncomment if needed to limit crawl rate
 Allow: /assets/
 
 # Allow all file types for crawling

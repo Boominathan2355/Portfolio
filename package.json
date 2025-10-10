@@ -6,12 +6,13 @@
   "homepage": "https://Boominathan2355.github.io/Portfolio",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run generate-sitemap",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "lint": "eslint .",
-    "generate-sitemap": "node scripts/generate-sitemap.js"
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "postbuild": "npm run generate-sitemap"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
