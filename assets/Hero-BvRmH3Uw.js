@@ -1,4 +1,4 @@
-import{c as C,r as p,j as d,m as D}from"./index-CXRe4Z8v.js";import{S as H}from"./SocialIcons-irSAjpop.js";import{I as R}from"./ImageWithFallback-D1_I4zyb.js";import{m as I}from"./proxy-DttJyzt6.js";import"./github-YAteU9eG.js";/**
+import{c as C,r as p,j as d,m as D}from"./index-CV4lvZkT.js";import{S as H}from"./SocialIcons-dDbii_Y_.js";import{I as R}from"./ImageWithFallback-92u9Ylre.js";import{m as I}from"./proxy-DPe7DA0k.js";import"./github-Bn9fuR28.js";/**
  * @license lucide-react v0.344.0 - ISC
  *
  * This source code is licensed under the ISC license.
