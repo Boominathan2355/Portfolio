@@ -8,16 +8,9 @@ const __dirname = dirname(__filename);
 
 const BASE_URL = 'https://boominathan2355.github.io/Portfolio';
 
-// Routes configuration with additional metadata
+// Routes configuration (Focus on main landing page for Single Page Application)
 const routes = [
-  { path: '', changefreq: 'daily', priority: '1.0' },
-  { path: '#about', changefreq: 'weekly', priority: '0.9' },
-  { path: '#skills', changefreq: 'monthly', priority: '0.8' },
-  { path: '#projects', changefreq: 'weekly', priority: '0.9' },
-  { path: '#education', changefreq: 'monthly', priority: '0.7' },
-  { path: '#experience', changefreq: 'monthly', priority: '0.8' },
-  { path: '#certifications', changefreq: 'monthly', priority: '0.7' },
-  { path: '#contact', changefreq: 'monthly', priority: '0.8' }
+  { path: '', changefreq: 'weekly', priority: '1.0' }
 ];
 
 // Function to format date to YYYY-MM-DD
