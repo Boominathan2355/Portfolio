@@ -45,7 +45,10 @@ function App() {
             <Projects data={personalData.projects} />
             <Education data={personalData.education} />
             <Experience data={personalData.experience} />
-            <Certifications data={personalData.certifications} />
+            <Certifications 
+              certifications={personalData.certifications} 
+              achievements={personalData.achievements} 
+            />
             <Contact data={personalData} />
           </main>
           <Footer data={personalData} />

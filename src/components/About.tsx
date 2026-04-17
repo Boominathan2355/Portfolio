@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Cpu, Lightbulb } from 'lucide-react';
+import { BookOpen, Cpu } from 'lucide-react';
 import { PersonalData } from '../data/personalData';
 import ImageWithFallback from './ImageWithFallback';
 
@@ -25,104 +25,121 @@ const About: FC<AboutProps> = ({ data }) => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.6,
+        ease: "easeOut"
       }
     }
   };
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
-      <div className="section-container">
-        <motion.h2 
-          className="section-title"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          About Me
-        </motion.h2>
+    <section id="about" className="py-32 bg-white dark:bg-gray-950 relative overflow-hidden">
+      {/* Decorative background element */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute top-1/2 left-0 w-64 h-64 bg-primary-100/20 dark:bg-primary-900/10 rounded-full blur-3xl -translate-x-1/2 mt-24"></div>
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
+      <div className="section-container relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          
+          {/* Left: Image & Quick Stats */}
           <motion.div 
-            className="lg:col-span-2"
-            initial={{ opacity: 0, x: -50 }}
+            className="lg:col-span-5 space-y-8"
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="relative h-96 rounded-xl overflow-hidden shadow-xl bg-gray-100">
-              <ImageWithFallback 
-                src="/working.jpg"
-                alt="Working on computer"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+                <ImageWithFallback 
+                  src="/working.jpg"
+                  alt="Boominathan at work"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+            </div>
+
+            {/* Feature Cards */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="p-6 rounded-2xl glass border border-primary-500/20 shadow-lg text-center hover:scale-105 transition-transform duration-300">
+                <BookOpen className="w-8 h-8 text-primary-600 dark:text-primary-400 mx-auto mb-3" />
+                <h4 className="font-bold text-gray-900 dark:text-white">Education</h4>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">B.Tech AI & DS</p>
+              </div>
+              <div className="p-6 rounded-2xl glass border border-secondary-500/20 shadow-lg text-center hover:scale-105 transition-transform duration-300">
+                <Cpu className="w-8 h-8 text-secondary-600 dark:text-secondary-400 mx-auto mb-3" />
+                <h4 className="font-bold text-gray-900 dark:text-white">Focus</h4>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Optimization</p>
+              </div>
             </div>
           </motion.div>
 
+          {/* Right: Bio & Info Grid */}
           <motion.div 
-            className="lg:col-span-3"
+            className="lg:col-span-7"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.p 
-              className="text-lg text-gray-700 dark:text-gray-300 mb-6"
+            <motion.h2 
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-8 tracking-tight text-gray-900 dark:text-white"
               variants={itemVariants}
             >
-              {data.about}
-            </motion.p>
+              Transforming <span className="text-primary-500">Data</span> into <span className="text-secondary-500">Intelligence</span>
+            </motion.h2>
 
+            <div className="space-y-6 mb-10 max-w-3xl">
+              {Array.isArray(data.about) ? (
+                data.about.map((paragraph, index) => (
+                  <motion.p 
+                    key={index}
+                    className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-inter text-justify"
+                    variants={itemVariants}
+                  >
+                    {paragraph}
+                  </motion.p>
+                ))
+              ) : (
+                <motion.p 
+                  className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-inter text-justify"
+                  variants={itemVariants}
+                >
+                  {data.about}
+                </motion.p>
+              )}
+            </div>
+
+            {/* Info Grid */}
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6"
+              className="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-x-4 p-6 rounded-3xl bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 max-w-2xl"
               variants={itemVariants}
             >
-              <div className="flex flex-col items-center p-5 rounded-lg bg-gray-50 dark:bg-gray-800">
-                <div className="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mb-3">
-                  <BookOpen className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+              {[
+                { label: 'Name', value: data.name },
+                { label: 'Email', value: data.email, link: `mailto:${data.email}` },
+                { label: 'Phone', value: data.phone, link: `tel:${data.phone}` },
+                { label: 'Location', value: data.location },
+              ].map((info) => (
+                <div key={info.label}>
+                  <p className="text-[10px] font-bold text-primary-600 dark:text-primary-400 uppercase tracking-widest">
+                    {info.label}
+                  </p>
+                  {info.link ? (
+                    <a 
+                      href={info.link} 
+                      className="text-lg font-semibold text-gray-900 dark:text-white hover:text-primary-500 transition-colors break-words"
+                    >
+                      {info.value}
+                    </a>
+                  ) : (
+                    <p className="text-lg font-semibold text-gray-900 dark:text-white break-words">
+                      {info.value}
+                    </p>
+                  )}
                 </div>
-                <h3 className="font-semibold text-lg mb-1">Education</h3>
-                <p className="text-center text-gray-600 dark:text-gray-400">B.Tech in AI & Data Science</p>
-              </div>
-
-              <div className="flex flex-col items-center p-5 rounded-lg bg-gray-50 dark:bg-gray-800">
-                <div className="w-12 h-12 rounded-full bg-secondary-100 dark:bg-secondary-900 flex items-center justify-center mb-3">
-                  <Cpu className="w-6 h-6 text-secondary-600 dark:text-secondary-400" />
-                </div>
-                <h3 className="font-semibold text-lg mb-1">Experience</h3>
-                <p className="text-center text-gray-600 dark:text-gray-400">Database Optimization</p>
-              </div>
-
-              <div className="flex flex-col items-center p-5 rounded-lg bg-gray-50 dark:bg-gray-800">
-                <div className="w-12 h-12 rounded-full bg-accent-100 dark:bg-accent-900 flex items-center justify-center mb-3">
-                  <Lightbulb className="w-6 h-6 text-accent-600 dark:text-accent-400" />
-                </div>
-                <h3 className="font-semibold text-lg mb-1">Interests</h3>
-                <p className="text-center text-gray-600 dark:text-gray-400">IoT, ML, Full Stack</p>
-              </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-semibold mb-3">Personal Info</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-1">Name:</p>
-                  <p className="font-medium">{data.name}</p>
-                </div>
-                <div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-1">Email:</p>
-                  <p className="font-medium">{data.email}</p>
-                </div>
-                <div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-1">Phone:</p>
-                  <p className="font-medium">{data.phone}</p>
-                </div>
-                <div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-1">Location:</p>
-                  <p className="font-medium">{data.location}</p>
-                </div>
-              </div>
+              ))}
             </motion.div>
           </motion.div>
         </div>
@@ -130,5 +147,6 @@ const About: FC<AboutProps> = ({ data }) => {
     </section>
   );
 };
+
 
 export default About;

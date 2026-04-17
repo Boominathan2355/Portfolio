@@ -4,6 +4,7 @@ import {
   Facebook, Twitter, Instagram, Youtube 
 } from 'lucide-react';
 import { SocialLink } from '../data/personalData';
+import Tooltip from './Tooltip';
 
 interface SocialIconsProps {
   social: SocialLink[];
@@ -37,16 +38,17 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ social }) => {
   return (
     <div className="flex space-x-4">
       {social.map((item) => (
-        <a
-          key={item.name}
-          href={item.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="social-icon"
-          aria-label={item.name}
-        >
-          {getIcon(item.icon)}
-        </a>
+        <Tooltip key={item.name} text={item.name}>
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label={item.name}
+          >
+            {getIcon(item.icon)}
+          </a>
+        </Tooltip>
       ))}
     </div>
   );

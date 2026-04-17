@@ -21,6 +21,7 @@ export default {
           700: '#1d4ed8',
           800: '#1e40af',
           900: '#1e3a8a',
+          950: '#172554',
         },
         secondary: {
           50: '#f0fdfa',
@@ -49,11 +50,27 @@ export default {
       },
       animation: {
         'bounce-slow': 'bounce 3s linear infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'blob': 'blob 7s infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        blob: {
+          '0%': { transform: 'translate(0px, 0px) scale(1)' },
+          '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+          '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+          '100%': { transform: 'translate(0px, 0px) scale(1)' },
+        },
       },
       screens: {
         'xs': '475px',
         ...defaultTheme.screens,
       },
+
       spacing: {
         '18': '4.5rem',
         '112': '28rem',
