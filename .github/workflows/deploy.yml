@@ -1,54 +1,13 @@
-name: Deploy to GitHub Pages
+name: Disabled Workflow
 
 on:
-  push:
-    branches: [ main ]
+  # This workflow is disabled to prevent conflicts with manual 'npm run deploy'.
+  # It is kept here as a placeholder. You can safely delete this file.
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
-  build:
+  info:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          # Removed 'cache: npm' because package-lock.json is ignored in git,
-          # which causes this step to fail on the runner.
-      
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Build
-        run: npm run build
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ./dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Info
+        run: echo "Manual deployment is enabled via 'npm run deploy'. This Action is currently inactive."
