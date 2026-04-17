@@ -25,6 +25,7 @@ dist-ssr/
 .cache/
 .temp/
 .output/
+dist/
 
 # =============================
 # Logs and Debugging
