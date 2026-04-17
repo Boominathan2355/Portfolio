@@ -1,6 +1,6 @@
 # Portfolio Website Robots.txt
 # Author: Boominathan Alagirisamy
-# Last Updated: 2025-10-10
+# Last Updated: 2026-04-17
 
 # Sitemap location
 Sitemap: https://boominathan2355.github.io/Portfolio/sitemap.xml
@@ -11,7 +11,7 @@ Allow: /
 Disallow: /private/
 Disallow: /temp/
 
-# Crawl-delay: 10  # Uncomment if needed to limit crawl rate
+# Crawl-delay: 5  # Optional: limit crawl rate if needed
 Allow: /assets/
 
 # Allow all file types for crawling
@@ -24,9 +24,3 @@ Allow: /*.gif$
 Allow: /*.svg$
 Allow: /*.pdf$
 Allow: /*.webp$
-
-# Sitemap location
-Sitemap: https://boominathan2355.github.io/Portfolio/sitemap.xml
-
-# Crawl delay (optional - remove if you want faster crawling)
-Crawl-delay: 5
