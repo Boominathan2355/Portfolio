@@ -1,4 +1,4 @@
-import{c as a,j as e,m as s}from"./index-BeWTJvsJ.js";import{S as o}from"./SocialIcons-CTGQUPpU.js";import"./proxy-CFQp-s7P.js";import"./github-DZLhVUBh.js";/**
+import{c as a,j as e,m as s}from"./index-B28XppfY.js";import{S as o}from"./SocialIcons-CdaK2zG3.js";import"./proxy-w9wylvW4.js";import"./github-B_mrlVl1.js";/**
  * @license lucide-react v0.344.0 - ISC
  *
  * This source code is licensed under the ISC license.
