@@ -60,22 +60,22 @@ const Contact: FC<ContactProps> = ({ data }) => {
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="from_name" className="text-xs font-medium text-muted-foreground block mb-1.5">Name</label>
+              <label htmlFor="user_name" className="text-xs font-medium text-muted-foreground block mb-1.5">Name</label>
               <input
                 type="text"
-                id="from_name"
-                name="from_name"
+                id="user_name"
+                name="user_name"
                 required
                 className="input"
                 placeholder="Your name"
               />
             </div>
             <div>
-              <label htmlFor="from_email" className="text-xs font-medium text-muted-foreground block mb-1.5">Email</label>
+              <label htmlFor="user_email" className="text-xs font-medium text-muted-foreground block mb-1.5">Email</label>
               <input
                 type="email"
-                id="from_email"
-                name="from_email"
+                id="user_email"
+                name="user_email"
                 required
                 className="input"
                 placeholder="you@example.com"
