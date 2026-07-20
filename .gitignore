@@ -19,13 +19,12 @@ lib-cov/
 # Production Builds
 # =============================
 build/
-# dist/ (commented to allow GitHub Pages deployment)
+dist/
 dist-ssr/
 *.local
 .cache/
 .temp/
 .output/
-dist/
 
 # =============================
 # Logs and Debugging

@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemaps
-Sitemap: https://boominathan2355.github.io/Portfolio/sitemap.xml
