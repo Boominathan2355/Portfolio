@@ -175,3 +175,6 @@ out/
 # (No ignore rule for /public/ so these files will be tracked)
 
 node_modules
+
+.vercel
+.env*
