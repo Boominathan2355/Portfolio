@@ -19,10 +19,10 @@ const Contact: FC<ContactProps> = ({ data }) => {
     setStatus('sending');
     try {
       await emailjs.sendForm(
-        'service_vvgm7ps',
-        'template_uaflqgi',
+        'service_pq94cro',
+        'template_2nvgjbk',
         formRef.current,
-        'YzGIjkC5R__P1U5tN'
+        'PGW4Eamxodp5iiWLl'
       );
       setStatus('sent');
       formRef.current.reset();
