@@ -25,7 +25,7 @@ const Hero: FC<HeroProps> = ({ data }) => {
             <img 
               src={`${import.meta.env.BASE_URL || '/'}profile.jpg`}
               alt={`${data.name} Profile`} 
-              fetchPriority="high"
+              fetchpriority="high"
               decoding="sync"
               className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full object-cover shadow-2xl ring-4 ring-background border border-border/20"
             />
