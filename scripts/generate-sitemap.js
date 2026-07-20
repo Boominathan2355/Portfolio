@@ -6,7 +6,17 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const BASE_URL = 'https://boominathan2355.github.io/Portfolio';
+try {
+  process.loadEnvFile(resolve(__dirname, '../.env'));
+} catch {
+  // .env is optional locally (e.g. CI providing real env vars directly)
+}
+
+const BASE_URL = (process.env.VITE_SITE_URL || 'https://example.com').replace(/\/$/, '');
+
+if (!process.env.VITE_SITE_URL) {
+  console.warn('⚠️  VITE_SITE_URL not set — sitemap.xml/robots.txt using placeholder https://example.com. See .env.example.');
+}
 
 // Routes configuration (Focus on main landing page for Single Page Application)
 const routes = [
@@ -36,14 +46,22 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     .join('')}
 </urlset>`;
 
-// Write sitemap to both dist and public directories
-const distPath = resolve(__dirname, '../dist/sitemap.xml');
-const publicPath = resolve(__dirname, '../public/sitemap.xml');
+const robots = `User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: ${BASE_URL}/sitemap.xml
+`;
+
+// Write sitemap + robots.txt to both dist and public directories
+const targets = ['../dist', '../public'];
 
 try {
-  writeFileSync(distPath, sitemap);
-  writeFileSync(publicPath, sitemap);
-  console.log('✅ Sitemap generated successfully!');
+  for (const dir of targets) {
+    writeFileSync(resolve(__dirname, `${dir}/sitemap.xml`), sitemap);
+    writeFileSync(resolve(__dirname, `${dir}/robots.txt`), robots);
+  }
+  console.log('✅ Sitemap & robots.txt generated successfully!');
   console.log(`🔗 Sitemap URL: ${BASE_URL}/sitemap.xml`);
 } catch (error) {
   console.error('❌ Error generating sitemap:', error);

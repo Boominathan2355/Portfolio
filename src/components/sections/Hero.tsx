@@ -2,11 +2,11 @@ import { FC } from 'react';
 import { motion } from 'framer-motion';
 import { Download, Github, Linkedin, ArrowDown } from 'lucide-react';
 import { Link as ScrollLink } from 'react-scroll';
-import { PersonalData } from '../../data/personalData';
+import { PortfolioConfig } from '../../config/portfolio.config';
 import Container from '../layout/Container';
 
 interface HeroProps {
-  data: PersonalData;
+  data: PortfolioConfig;
 }
 
 const Hero: FC<HeroProps> = ({ data }) => {
@@ -23,7 +23,7 @@ const Hero: FC<HeroProps> = ({ data }) => {
               className="shrink-0"
             >
             <img 
-              src={`${import.meta.env.BASE_URL || '/'}profile.jpg`}
+              src={`${import.meta.env.BASE_URL || '/'}${data.profileImage}`}
               alt={`${data.name} Profile`} 
               fetchpriority="high"
               decoding="sync"
@@ -41,7 +41,7 @@ const Hero: FC<HeroProps> = ({ data }) => {
           >
             <span className="chip chip-primary text-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-2 animate-pulse" />
-              Currently at DevOpsLabs India
+              {data.statusChip}
             </span>
           </motion.div>
 
@@ -83,9 +83,9 @@ const Hero: FC<HeroProps> = ({ data }) => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <a
-              href={`${import.meta.env.BASE_URL || '/'}Boominathan-A_AIDS.pdf`}
+              href={`${import.meta.env.BASE_URL || '/'}${data.resumeFile}`}
               download
-              aria-label="Download Boominathan's Resume PDF"
+              aria-label={`Download ${data.name}'s Resume PDF`}
               className="btn-primary"
             >
               <Download size={16} />
@@ -95,7 +95,7 @@ const Hero: FC<HeroProps> = ({ data }) => {
               href={data.social.find(s => s.icon === 'github')?.url}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Visit Boominathan's GitHub Profile"
+              aria-label={`Visit ${data.name}'s GitHub Profile`}
               className="btn-secondary"
             >
               <Github size={16} />
@@ -105,7 +105,7 @@ const Hero: FC<HeroProps> = ({ data }) => {
               href={data.social.find(s => s.icon === 'linkedin')?.url}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Visit Boominathan's LinkedIn Profile"
+              aria-label={`Visit ${data.name}'s LinkedIn Profile`}
               className="btn-secondary"
             >
               <Linkedin size={16} />

@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { Command } from 'cmdk';
 import { useTheme } from 'next-themes';
-import { Moon, Sun, Download, Monitor, User, Briefcase, FileCode2, Terminal, Code2, Mail } from 'lucide-react';
+import { Moon, Sun, Download, Monitor, User, Terminal } from 'lucide-react';
 import { scroller } from 'react-scroll';
+import { portfolioConfig } from '../../config/portfolio.config';
 
 interface CommandPaletteProps {
   open: boolean;
@@ -36,12 +37,15 @@ export function CommandPalette({ open, setOpen }: CommandPaletteProps) {
   const handleDownloadResume = () => {
     setOpen(false);
     const link = document.createElement('a');
-    link.href = '/Boominathan-A_AIDS.pdf';
-    link.download = 'Boominathan-A_AIDS.pdf';
+    link.href = `${import.meta.env.BASE_URL || '/'}${portfolioConfig.resumeFile}`;
+    link.download = portfolioConfig.resumeFile;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
+
+  const githubUrl = portfolioConfig.social.find((s) => s.icon === 'github')?.url;
+  const enabledSections = portfolioConfig.sections.filter((s) => s.enabled);
 
   return (
     <Command.Dialog
@@ -69,21 +73,18 @@ export function CommandPalette({ open, setOpen }: CommandPaletteProps) {
             <Command.Item onSelect={() => scrollTo('hero')} className="flex items-center gap-2 px-2 py-2 text-sm rounded-md cursor-pointer hover:bg-muted text-foreground aria-selected:bg-muted">
               <User size={14} /> Home
             </Command.Item>
-            <Command.Item onSelect={() => scrollTo('about')} className="flex items-center gap-2 px-2 py-2 text-sm rounded-md cursor-pointer hover:bg-muted text-foreground aria-selected:bg-muted">
-              <User size={14} /> About
-            </Command.Item>
-            <Command.Item onSelect={() => scrollTo('experience')} className="flex items-center gap-2 px-2 py-2 text-sm rounded-md cursor-pointer hover:bg-muted text-foreground aria-selected:bg-muted">
-              <Briefcase size={14} /> Experience
-            </Command.Item>
-            <Command.Item onSelect={() => scrollTo('projects')} className="flex items-center gap-2 px-2 py-2 text-sm rounded-md cursor-pointer hover:bg-muted text-foreground aria-selected:bg-muted">
-              <FileCode2 size={14} /> Projects
-            </Command.Item>
-            <Command.Item onSelect={() => scrollTo('skills')} className="flex items-center gap-2 px-2 py-2 text-sm rounded-md cursor-pointer hover:bg-muted text-foreground aria-selected:bg-muted">
-              <Code2 size={14} /> Skills
-            </Command.Item>
-             <Command.Item onSelect={() => scrollTo('contact')} className="flex items-center gap-2 px-2 py-2 text-sm rounded-md cursor-pointer hover:bg-muted text-foreground aria-selected:bg-muted">
-              <Mail size={14} /> Contact
-            </Command.Item>
+            {enabledSections.map((section) => {
+              const Icon = section.icon;
+              return (
+                <Command.Item
+                  key={section.id}
+                  onSelect={() => scrollTo(section.id)}
+                  className="flex items-center gap-2 px-2 py-2 text-sm rounded-md cursor-pointer hover:bg-muted text-foreground aria-selected:bg-muted"
+                >
+                  <Icon size={14} /> {section.label}
+                </Command.Item>
+              );
+            })}
           </Command.Group>
 
           <Command.Separator className="h-px bg-border my-1" />
@@ -106,9 +107,11 @@ export function CommandPalette({ open, setOpen }: CommandPaletteProps) {
              <Command.Item onSelect={handleDownloadResume} className="flex items-center gap-2 px-2 py-2 text-sm rounded-md cursor-pointer hover:bg-muted text-foreground aria-selected:bg-muted">
               <Download size={14} /> Download Resume
             </Command.Item>
-             <Command.Item onSelect={() => { window.open('https://github.com/Boominathan2355', '_blank'); setOpen(false); }} className="flex items-center gap-2 px-2 py-2 text-sm rounded-md cursor-pointer hover:bg-muted text-foreground aria-selected:bg-muted">
-              <Terminal size={14} /> View GitHub
-            </Command.Item>
+             {githubUrl && (
+              <Command.Item onSelect={() => { window.open(githubUrl, '_blank'); setOpen(false); }} className="flex items-center gap-2 px-2 py-2 text-sm rounded-md cursor-pointer hover:bg-muted text-foreground aria-selected:bg-muted">
+                <Terminal size={14} /> View GitHub
+              </Command.Item>
+            )}
           </Command.Group>
         </Command.List>
       </div>

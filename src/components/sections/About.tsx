@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import Section from '../layout/Section';
-import { PersonalData } from '../../data/personalData';
+import { PortfolioConfig } from '../../config/portfolio.config';
 
 interface AboutProps {
-  data: PersonalData;
+  data: PortfolioConfig;
 }
 
 const About: FC<AboutProps> = ({ data }) => {
@@ -20,8 +20,8 @@ const About: FC<AboutProps> = ({ data }) => {
         <div className="lg:col-span-2">
           <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-border shadow-sm bg-muted">
             <img 
-              src={`${import.meta.env.BASE_URL || '/'}working.jpg`}
-              alt="Boominathan at work"
+              src={`${import.meta.env.BASE_URL || '/'}${data.workImage}`}
+              alt={`${data.name} at work`}
               loading="lazy"
               decoding="async"
               className="w-full h-full object-cover"
@@ -36,7 +36,7 @@ const About: FC<AboutProps> = ({ data }) => {
           { label: 'Location', value: data.location },
           { label: 'Email', value: data.email, href: `mailto:${data.email}` },
           { label: 'Role', value: data.title },
-          { label: 'Education', value: 'B.Tech AI & DS' },
+          { label: 'Education', value: data.education[0]?.degree ?? '—' },
         ].map((item) => (
           <div key={item.label}>
             <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">

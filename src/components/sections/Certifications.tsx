@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Award, Trophy } from 'lucide-react';
 import Section from '../layout/Section';
-import { Certification, Achievement } from '../../data/personalData';
+import { Certification, Achievement } from '../../config/portfolio.config';
 
 interface CertificationsProps {
   certifications: Certification[];

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Briefcase, Code2, GraduationCap, Trophy, LucideIcon } from 'lucide-react';
 import Section from '../layout/Section';
-import { TimelineEvent } from '../../data/personalData';
+import { TimelineEvent } from '../../config/portfolio.config';
 import { cn } from '../../lib/utils';
 
 interface TimelineProps {

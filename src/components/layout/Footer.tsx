@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { Github, Linkedin, Code2, Terminal } from 'lucide-react';
-import { PersonalData } from '../../data/personalData';
+import { PortfolioConfig } from '../../config/portfolio.config';
 import Container from './Container';
 
 interface FooterProps {
-  data: PersonalData;
+  data: PortfolioConfig;
 }
 
 const iconMap: Record<string, FC<{ size: number; className?: string }>> = {

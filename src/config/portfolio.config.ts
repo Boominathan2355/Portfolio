@@ -1,3 +1,20 @@
+// ─────────────────────────────────────────────────────────────────
+// PORTFOLIO CONFIG — the single file you edit to make this your own.
+//
+// Everything the site renders (copy, projects, skills, nav, section
+// order/visibility, theme accent, resume filename) lives here.
+//
+// Deployment-level values that differ per hosting target or must
+// stay out of source control (EmailJS keys, canonical site URL,
+// base path, SEO meta) live in `.env` instead — see `.env.example`.
+// ─────────────────────────────────────────────────────────────────
+
+import {
+  Bot, Server, FileSearch, MessageSquare, Cpu, Workflow,
+  User, Briefcase, FileCode2, Code2, GraduationCap, Award, Clock, Mail,
+  type LucideIcon,
+} from 'lucide-react';
+
 // ─── Interfaces ────────────────────────────────────────────────
 
 export interface Skill {
@@ -64,16 +81,48 @@ export interface TimelineEvent {
   type: 'role' | 'project' | 'education' | 'achievement';
 }
 
-export interface PersonalData {
+export interface AIEngineeringArea {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  status: string;
+  evidence: string | null;
+}
+
+export interface SectionEntry {
+  /** Must match the section component's DOM id (used for scroll/nav targeting). */
+  id: 'about' | 'experience' | 'focus' | 'skills' | 'projects' | 'ai-engineering' | 'timeline' | 'education' | 'certifications' | 'contact';
+  label: string;
+  icon: LucideIcon;
+  /** Render this section on the page at all. */
+  enabled: boolean;
+  /** Show a link in the top navbar (still reachable via scroll/command palette either way). */
+  showInNav: boolean;
+}
+
+export interface PortfolioConfig {
   name: string;
   title: string;
   headline: string;
+  statusChip: string;
   phone: string;
   email: string;
   location: string;
   bio: string;
   about: string[];
   social: SocialLink[];
+  resumeFile: string;
+  profileImage: string;
+  workImage: string;
+
+  theme: {
+    defaultMode: 'dark' | 'light' | 'system';
+    /** HSL triplet without hsl(), e.g. "221 83% 53%" — matches shadcn/Tailwind CSS-var convention. */
+    accent: { light: string; dark: string };
+  };
+
+  sections: SectionEntry[];
+
   skills: Skill[];
   projects: Project[];
   education: Education[];
@@ -82,14 +131,16 @@ export interface PersonalData {
   achievements: Achievement[];
   currentFocus: FocusArea[];
   timeline: TimelineEvent[];
+  aiEngineering: AIEngineeringArea[];
 }
 
-// ─── Data ──────────────────────────────────────────────────────
+// ─── Config ────────────────────────────────────────────────────
 
-export const personalData: PersonalData = {
+export const portfolioConfig: PortfolioConfig = {
   name: "Boominathan Alagirisamy",
   title: "Product Development Trainee",
   headline: "Software Engineer · AI Engineering · Enterprise Applications",
+  statusChip: "Currently at DevOpsLabs India",
   phone: "+91 6383737908",
   email: "boominathanalagirisamy@gmail.com",
   location: "Coimbatore, India",
@@ -106,6 +157,39 @@ export const personalData: PersonalData = {
     { name: "LinkedIn", url: "https://linkedin.com/in/boominathan-alagirisamy", icon: "linkedin" },
     { name: "LeetCode", url: "https://leetcode.com/u/Boominathan_A/", icon: "code" },
     { name: "HackerRank", url: "https://www.hackerrank.com/profile/Boominathan2355", icon: "terminal" },
+  ],
+
+  resumeFile: "Boominathan-A_AIDS.pdf",
+  profileImage: "profile.jpg",
+  workImage: "working.jpg",
+
+  // ─── Theme ───────────────────────────────────────────────────
+
+  theme: {
+    defaultMode: "dark",
+    accent: {
+      light: "221 83% 53%",
+      dark: "217 91% 60%",
+    },
+  },
+
+  // ─── Sections ────────────────────────────────────────────────
+  // Controls render order, page visibility, and nav/command-palette listing.
+  // Reorder this array to reorder the page. Set enabled:false to hide a
+  // section entirely (e.g. no Certifications). "hero" and "footer" are
+  // always rendered and aren't listed here.
+
+  sections: [
+    { id: 'about', label: 'About', icon: User, enabled: true, showInNav: true },
+    { id: 'experience', label: 'Experience', icon: Briefcase, enabled: true, showInNav: true },
+    { id: 'focus', label: 'Current Focus', icon: Clock, enabled: true, showInNav: false },
+    { id: 'skills', label: 'Skills', icon: Code2, enabled: true, showInNav: true },
+    { id: 'projects', label: 'Projects', icon: FileCode2, enabled: true, showInNav: true },
+    { id: 'ai-engineering', label: 'AI Engineering', icon: Bot, enabled: true, showInNav: false },
+    { id: 'timeline', label: 'Timeline', icon: Clock, enabled: true, showInNav: false },
+    { id: 'education', label: 'Education', icon: GraduationCap, enabled: true, showInNav: false },
+    { id: 'certifications', label: 'Certifications', icon: Award, enabled: true, showInNav: false },
+    { id: 'contact', label: 'Contact', icon: Mail, enabled: true, showInNav: true },
   ],
 
   // ─── Skills ────────────────────────────────────────────────────
@@ -375,5 +459,52 @@ export const personalData: PersonalData = {
     { date: "Mar 2023", title: "Autodesk Fusion 360 — State Finalist", description: "District winner and state-level finalist in Fusion 360 Mega Challenge.", type: "achievement" },
     { date: "Apr 2023", title: "Completed Diploma in Mechanical Engineering", description: "Graduated from Nachimuthu Polytechnic College with 77%.", type: "education" },
     { date: "2022", title: "Built CNC Laser Engraver", description: "Engineered Arduino-based portable laser engraver with GRBL firmware.", type: "project" },
+  ],
+
+  // ─── AI Engineering ────────────────────────────────────────────
+
+  aiEngineering: [
+    {
+      icon: Bot,
+      title: 'Local LLM Deployment',
+      description: 'Built an offline chatbot using Ollama for local LLM inference. Exploring llama.cpp for efficient on-device model serving.',
+      status: 'Built & Exploring',
+      evidence: 'Offline Chatbot project',
+    },
+    {
+      icon: Cpu,
+      title: 'Transformer Architecture',
+      description: 'Implemented a Transformer sequence-to-sequence model from scratch in PyTorch — Multi-Head Attention, Positional Encoding, Encoder-Decoder, and Masked Attention.',
+      status: 'Built',
+      evidence: 'Transformers Model project',
+    },
+    {
+      icon: MessageSquare,
+      title: 'Prompt Engineering',
+      description: 'Integrated Qwen AI for intelligent assistance in the Panchakarma therapy system. Practiced prompt design for LLM-powered chatbot interactions.',
+      status: 'Practiced',
+      evidence: 'Panchakarma & Chatbot projects',
+    },
+    {
+      icon: FileSearch,
+      title: 'Document Intelligence',
+      description: 'Researching OCR workflows, document validation pipelines, and AI-assisted document processing for enterprise applications.',
+      status: 'Researching',
+      evidence: null,
+    },
+    {
+      icon: Server,
+      title: 'Retrieval-Augmented Generation',
+      description: 'Researching RAG architectures for grounding LLM outputs with domain-specific knowledge retrieval using vector search.',
+      status: 'Researching',
+      evidence: null,
+    },
+    {
+      icon: Workflow,
+      title: 'Model Context Protocol',
+      description: 'Exploring MCP as a standardized interface for connecting AI models with external tools and data sources.',
+      status: 'Exploring',
+      evidence: null,
+    },
   ],
 };

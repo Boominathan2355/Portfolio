@@ -2,27 +2,44 @@ import { FC, useState, useRef } from 'react';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import Section from '../layout/Section';
-import { PersonalData } from '../../data/personalData';
+import { PortfolioConfig } from '../../config/portfolio.config';
 
 interface ContactProps {
-  data: PersonalData;
+  data: PortfolioConfig;
+}
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string | undefined;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
+const EMAILJS_CONFIGURED = Boolean(EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY);
+
+if (!EMAILJS_CONFIGURED) {
+  console.warn(
+    'Contact form is not configured: set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, ' +
+    'and VITE_EMAILJS_PUBLIC_KEY in .env (see .env.example) to enable email delivery.'
+  );
 }
 
 const Contact: FC<ContactProps> = ({ data }) => {
   const formRef = useRef<HTMLFormElement>(null);
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error' | 'unconfigured'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
 
+    if (!EMAILJS_CONFIGURED || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      setStatus('unconfigured');
+      return;
+    }
+
     setStatus('sending');
     try {
       await emailjs.sendForm(
-        'service_pq94cro',
-        'template_2nvgjbk',
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         formRef.current,
-        'PGW4Eamxodp5iiWLl'
+        EMAILJS_PUBLIC_KEY
       );
       setStatus('sent');
       formRef.current.reset();
@@ -116,10 +133,17 @@ const Contact: FC<ContactProps> = ({ data }) => {
               <><CheckCircle size={16} /> Sent successfully</>
             ) : status === 'error' ? (
               <><AlertCircle size={16} /> Failed to send</>
+            ) : status === 'unconfigured' ? (
+              <><AlertCircle size={16} /> Email not configured</>
             ) : (
               <><Send size={16} /> Send Message</>
             )}
           </button>
+          {status === 'unconfigured' && (
+            <p className="text-xs text-muted-foreground">
+              This form isn't wired up yet — set the <code>VITE_EMAILJS_*</code> variables in <code>.env</code> (see <code>.env.example</code>).
+            </p>
+          )}
         </form>
       </div>
     </Section>

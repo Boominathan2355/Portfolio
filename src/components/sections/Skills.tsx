@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Section from '../layout/Section';
-import { Skill } from '../../data/personalData';
+import { Skill } from '../../config/portfolio.config';
 
 interface SkillsProps {
   data: Skill[];

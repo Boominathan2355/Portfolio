@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Zap, Search, FlaskConical } from 'lucide-react';
 import Section from '../layout/Section';
-import { FocusArea } from '../../data/personalData';
+import { FocusArea } from '../../config/portfolio.config';
 import { cn } from '../../lib/utils';
 
 interface CurrentFocusProps {

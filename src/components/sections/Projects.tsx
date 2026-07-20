@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
 import Section from '../layout/Section';
-import { Project } from '../../data/personalData';
+import { Project, portfolioConfig } from '../../config/portfolio.config';
 import { cn } from '../../lib/utils';
 
 interface ProjectsProps {
@@ -42,7 +42,7 @@ const ProjectCard: FC<{ project: Project }> = ({ project }) => {
             </a>
           )}
           <a
-            href={project.github || 'https://github.com/Boominathan2355'}
+            href={project.github || portfolioConfig.social.find((s) => s.icon === 'github')?.url}
             target="_blank"
             rel="noopener noreferrer"
             className="p-1.5 text-muted-foreground hover:text-foreground rounded-md hover:bg-muted transition-colors"

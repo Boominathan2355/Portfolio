@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Section from '../layout/Section';
-import { Experience as ExperienceType } from '../../data/personalData';
+import { Experience as ExperienceType } from '../../config/portfolio.config';
 
 interface ExperienceProps {
   data: ExperienceType[];

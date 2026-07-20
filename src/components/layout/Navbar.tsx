@@ -3,18 +3,15 @@ import { Link as ScrollLink } from 'react-scroll';
 import { Menu, X, Sun, Moon, Download, Command } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { cn } from '../../lib/utils';
+import { portfolioConfig } from '../../config/portfolio.config';
 
 interface NavbarProps {
   onCommandPalette: () => void;
 }
 
-const navLinks = [
-  { name: 'About', to: 'about' },
-  { name: 'Experience', to: 'experience' },
-  { name: 'Projects', to: 'projects' },
-  { name: 'Skills', to: 'skills' },
-  { name: 'Contact', to: 'contact' },
-];
+const navLinks = portfolioConfig.sections
+  .filter((s) => s.enabled && s.showInNav)
+  .map((s) => ({ name: s.label, to: s.id }));
 
 const Navbar: FC<NavbarProps> = ({ onCommandPalette }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +41,7 @@ const Navbar: FC<NavbarProps> = ({ onCommandPalette }) => {
           {/* Logo */}
           <ScrollLink to="hero" smooth duration={500} className="cursor-pointer">
             <span className="text-base font-semibold tracking-tight text-foreground">
-              Boominathan<span className="text-primary">.</span>
+              {portfolioConfig.name.split(' ')[0]}<span className="text-primary">.</span>
             </span>
           </ScrollLink>
 
@@ -122,7 +119,7 @@ const Navbar: FC<NavbarProps> = ({ onCommandPalette }) => {
               </ScrollLink>
             ))}
             <a
-              href={`${import.meta.env.BASE_URL || '/'}Boominathan-A_AIDS.pdf`}
+              href={`${import.meta.env.BASE_URL || '/'}${portfolioConfig.resumeFile}`}
               download
               className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-foreground"
             >

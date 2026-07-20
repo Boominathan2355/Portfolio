@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { GraduationCap } from 'lucide-react';
 import Section from '../layout/Section';
-import { Education as EducationType } from '../../data/personalData';
+import { Education as EducationType } from '../../config/portfolio.config';
 
 interface EducationProps {
   data: EducationType[];
