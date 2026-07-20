@@ -5,7 +5,7 @@
 A reusable, fully data-driven developer portfolio built with React, TypeScript, and Vite.
 Fork it, edit a single config file, and ship your own — no component code required.
 
-[![Live Demo](https://img.shields.io/website?url=https%3A%2F%2Fboominathan2355.github.io%2FPortfolio%2F&label=demo&style=flat-square)](https://boominathan2355.github.io/Portfolio/)
+[![Live Demo](https://img.shields.io/website?url=https%3A%2F%2Fportfolio-red-iota-91.vercel.app&label=demo&style=flat-square)](https://portfolio-red-iota-91.vercel.app)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
@@ -153,23 +153,18 @@ Set `theme.accent.light` / `theme.accent.dark` in the config (HSL triplet, e.g. 
 
 ## Deployment
 
-### GitHub Pages
-
-```bash
-# In .env: VITE_BASE_PATH=/your-repo-name/, VITE_SITE_URL=https://<user>.github.io/<repo>
-npm run deploy
-```
-
-Also update the `homepage` field in `package.json` to match. This command runs `vite build`, regenerates `sitemap.xml`, `robots.txt`, and `manifest.json` from `.env`, and publishes `dist/` via `gh-pages`.
-
-### Vercel
+### Vercel (recommended)
 
 ```bash
 npx vercel link
 npx vercel --prod
 ```
 
-Leave `VITE_BASE_PATH` unset (defaults to `/`) — Vercel serves from the domain root. Set the same variables from `.env` in the Vercel project's Environment Variables settings, since `.env` itself is never uploaded.
+Leave `VITE_BASE_PATH` unset (defaults to `/`) — Vercel serves from the domain root. Set the same variables from `.env` in the Vercel project's Environment Variables settings, since `.env` itself is never uploaded. Connect the project's GitHub repository in the Vercel dashboard for automatic deploys on every push to `main`.
+
+### Other static hosts (GitHub Pages, Netlify, etc.)
+
+`npm run build` produces a static `dist/` folder that can be published anywhere. For a GitHub Pages **project** site specifically, set `VITE_BASE_PATH=/your-repo-name/` and `VITE_SITE_URL=https://<user>.github.io/<repo>` in `.env` before building, then publish `dist/` with your tool of choice (e.g. the [`gh-pages`](https://www.npmjs.com/package/gh-pages) package, or a CI workflow using `actions/deploy-pages`). This repo doesn't ship that tooling by default — Vercel is the maintained deployment path.
 
 ## Project structure
 
@@ -201,7 +196,6 @@ Leave `VITE_BASE_PATH` unset (defaults to `/`) — Vercel serves from the domain
 | `npm run build` | Type-check-free production build, then regenerate `sitemap.xml`, `robots.txt`, and `manifest.json` |
 | `npm run preview` | Preview the production build locally |
 | `npm run lint` | Run ESLint |
-| `npm run deploy` | Build and publish `dist/` to the `gh-pages` branch |
 
 ## License
 
