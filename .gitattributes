@@ -1,0 +1,58 @@
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# Source code
+*.css text diff=css
+*.html text diff=html
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+*.json text
+*.md text diff=markdown
+*.yml text
+*.yaml text
+
+# Documentation
+*.pdf binary
+*.doc binary
+*.docx binary
+*.ppt binary
+*.pptx binary
+*.xls binary
+*.xlsx binary
+
+# Graphics
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+*.webp binary
+
+# Fonts
+*.ttf binary
+*.eot binary
+*.woff binary
+*.woff2 binary
+
+# Scripts
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# RC files
+.* text
+
+# Lock files
+package-lock.json text -diff
+yarn.lock text -diff
+pnpm-lock.yaml text -diff
+
+# Enforce GitHub as main language
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+*.js linguist-language=JavaScript
+*.jsx linguist-language=JavaScript

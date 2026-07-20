@@ -1,0 +1,57 @@
+{
+  "name": "Boominathan Alagirisamy — Full Stack Developer & AI Engineering Student",
+  "short_name": "Boominathan",
+  "description": "Portfolio of Boominathan Alagirisamy, a Full Stack Developer and AI Engineering student. Expertise in React, Node.js, Python, Deep Learning, and Local LLMs (Ollama, RAG, MCP). Building enterprise applications and intelligent systems.",
+  "start_url": "/Portfolio/",
+  "scope": "/Portfolio/",
+  "id": "/Portfolio/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "fullscreen"
+  ],
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "prefer_related_applications": false,
+  "categories": [
+    "portfolio",
+    "development",
+    "productivity"
+  ],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/Portfolio/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "url": "/Portfolio/#projects",
+      "description": "View my projects"
+    },
+    {
+      "name": "Contact",
+      "url": "/Portfolio/#contact",
+      "description": "Get in touch"
+    }
+  ],
+  "related_applications": [],
+  "iarc_rating_id": "",
+  "share_target": {
+    "action": "/Portfolio/share",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
