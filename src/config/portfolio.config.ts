@@ -159,7 +159,7 @@ export const portfolioConfig: PortfolioConfig = {
     { name: "HackerRank", url: "https://www.hackerrank.com/profile/Boominathan2355", icon: "terminal" },
   ],
 
-  resumeFile: "Boominathan-A_AIDS.pdf",
+  resumeFile: "Boominathan_fullstack.pdf",
   profileImage: "profile.jpg",
   workImage: "working.jpg",
 
